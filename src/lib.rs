@@ -7,13 +7,13 @@ use std::{
     path::{Path, PathBuf},
 };
 
-pub struct Generator<'a> {
+struct Generator<'a> {
     handlebars: handlebars::Handlebars<'a>,
     out_directory: PathBuf,
 }
 
 impl<'a> Generator<'a> {
-    pub fn create(out_directory: &Path, posts_directory: &Path) -> anyhow::Result<Self> {
+    fn create(out_directory: &Path, posts_directory: &Path) -> anyhow::Result<Self> {
         let mut handlebars = Handlebars::new();
         handlebars.set_strict_mode(true);
         handlebars.register_templates_directory("templates", Default::default())?;
@@ -24,7 +24,7 @@ impl<'a> Generator<'a> {
         })
     }
 
-    pub fn generate(&self) -> anyhow::Result<()> {
+    fn generate(&self) -> anyhow::Result<()> {
         fs::create_dir_all(self.out_directory.clone())?;
 
         let data = json!({
@@ -39,3 +39,15 @@ impl<'a> Generator<'a> {
         anyhow::Ok(())
     }
 }
+
+pub fn main() -> anyhow::Result<()> {
+    let out_directory = Path::new("site");
+    let posts_directory = Path::new("posts");
+
+    Generator::create(out_directory, posts_directory)
+        .unwrap()
+        .generate()?;
+
+    anyhow::Ok(())
+}
+
