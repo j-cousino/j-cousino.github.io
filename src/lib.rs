@@ -10,6 +10,7 @@ use std::{
 struct Generator<'a> {
     handlebars: handlebars::Handlebars<'a>,
     out_directory: PathBuf,
+    blogs: Vec<crate::blogs::Blog>,
 }
 
 impl<'a> Generator<'a> {
@@ -21,6 +22,7 @@ impl<'a> Generator<'a> {
         anyhow::Ok(Generator {
             handlebars,
             out_directory: out_directory.into(),
+            blogs: crate::blogs::load(posts_directory)?,
         })
     }
 
