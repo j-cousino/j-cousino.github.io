@@ -1,5 +1,11 @@
 use std::path::Path;
 
+use serde::Deserialize;
+
+#[derive(Deserialize)]
+struct Manifest {
+
+}
 pub struct Blog {
 
 }
