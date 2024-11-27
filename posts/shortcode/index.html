@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<html class="dark light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    
+    
+    
+    <title>
+         Shortcode Example
+        
+    </title>
+
+        
+            <meta property="og:title" content="Shortcode Example" />
+        
+     
+
+     
+         
+             <meta property="og:description" content="My personal website" />
+         
+     
+
+     
+         
+             <meta name="description" content="My personal website" />
+         
+    
+
+    
+    
+
+    
+    
+        <link href=https://j-cousino.github.io/fonts.css rel="stylesheet" />
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="j-cousino" href="https://j-cousino.github.io/atom.xml">
+
+
+    
+    
+        <link rel="stylesheet" type="text/css" href=https://j-cousino.github.io/theme/light.css />
+        <link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://j-cousino.github.io/theme/dark.css" />
+    
+
+    <!-- Set the correct theme in the script -->
+    <script src=https://j-cousino.github.io/js/themetoggle.js></script>
+    
+        <script>setTheme(getSavedTheme());</script>
+    
+
+    <link rel="stylesheet" type="text/css" media="screen" href=https://j-cousino.github.io/main.css />
+
+    
+</head>
+
+
+<body>
+    <div class="content">
+        <header>
+    <div class="main">
+        <a href=https:&#x2F;&#x2F;j-cousino.github.io>j-cousino</a>
+
+        <div class="socials">
+            
+            <a rel="me" href="https:&#x2F;&#x2F;github.com&#x2F;j-cousino&#x2F;" class="social">
+                <img alt=github src=https://j-cousino.github.io/social_icons/github.svg>
+            </a>
+            
+        </div>
+    </div>
+
+    <nav>
+        
+        <a href=https://j-cousino.github.io/posts style="margin-left: 0.5em">&#x2F;posts</a>
+        
+        <a href=https://j-cousino.github.io/about style="margin-left: 0.5em">&#x2F;about</a>
+        
+        <a href=https://j-cousino.github.io/tags style="margin-left: 0.5em">&#x2F;tags</a>
+        
+
+        
+        |<a id="dark-mode-toggle" onclick="toggleTheme(); event.preventDefault();" href="#">
+            <img src=https://j-cousino.github.io/feather/sun.svg id="sun-icon" style="filter: invert(1);" alt="Light" />
+            <img src=https://j-cousino.github.io/feather/moon.svg id="moon-icon" alt="Dark" />
+        </a>
+
+        <!-- Inititialize the theme toggle icons -->
+        <script>updateItemToggleTheme()</script>
+        
+    </nav>
+</header>
+
+
+        
+        
+    
+<main>
+    <article>
+        <div class="title">
+            
+            
+    <div class="page-header">
+        Shortcode Example<span class="primary-color" style="font-size: 1.6em">.</span>
+    </div>
+
+
+                <div class="meta">
+                    
+                        Posted on <time>2024-06-14</time>
+                    
+
+                    
+
+                    
+
+                    
+                    
+                            <span class="tags-label"> :: Tags:</span>
+                            <span class="tags">
+                                    <a href="https://j-cousino.github.io/tags/example/" class="post-tag">example</a>
+                                
+                            </span>
+                    
+
+                    
+                    
+
+                    
+
+                </div>
+        </div>
+
+        
+
+        
+        
+
+        <section class="body">
+            <h2 id="note"><a class="zola-anchor" href="#note" aria-label="Anchor link for: note">Note</a></h2>
+<p>Here is an example of the <code>note</code> shortcode:</p>
+<p>This one is static!
+<div class="note-container">
+  
+    <div class="note-header">
+      
+        <div class="note-icon">
+        <p>Note!</p>
+
+        </div>
+      
+    </div>
+    <div class="note-content">
+      <p>This blog assumes basic terminal maturity</p>
+
+    </div>
+  
+</div>
+</p>
+<p>This one is clickable!
+<div class="note-container">
+  
+    <button class="note-toggle">
+      
+        <div class="note-icon">
+        <p>Quiz!</p>
+
+        </div>
+      
+    </button>
+
+    
+    <div class="note-content" style="display: none;">
+    
+    <p>The answer to the quiz!</p>
+
+    </div>
+  
+</div>
+</p>
+<p>Syntax:</p>
+<pre><code>{{ note(header=&quot;Note!&quot;, body=&quot;This blog assumes basic terminal maturity&quot;) }}
+{{ note(clickable=true, hidden = true, header=&quot;Quiz!&quot;, body=&quot;The answer to the quiz!&quot;) }}
+</code></pre>
+<p>You can also use some HTML in the text:
+<div class="note-container">
+  
+    <div class="note-header">
+      
+        <div class="note-icon">
+        <p>Note!</p>
+
+        </div>
+      
+    </div>
+    <div class="note-content">
+      <h1>This blog assumes basic terminal maturity</h1>
+    </div>
+  
+</div>
+</p>
+<p>Literal shortcode:</p>
+<pre><code>{{ note(header=&quot;Note!&quot;, body=&quot;&lt;h1&gt;This blog assumes basic terminal maturity&lt;&#x2F;h1&gt;&quot;) }}
+</code></pre>
+<p>Pretty cool, right?</p>
+<p>Finally, you can do something like this (hopefully):</p>
+<div class="note-container">
+  
+    <button class="note-toggle">
+      
+        <div class="note-icon">
+        <p>Quiz!</p>
+
+        </div>
+      
+    </button>
+
+    
+    <div class="note-content" style="display: block;">
+    
+    <h1 id="hello-this-is-markdown-inside-a-note-shortcode">Hello this is markdown inside a note shortcode</h1>
+<pre data-lang="rust" class="language-rust "><code class="language-rust" data-lang="rust">fn main() {
+    println!(&quot;Hello World&quot;);
+}
+</code></pre>
+<p>We can't call another shortcode inside a shortcode, but this is good enough.</p>
+
+    </div>
+  
+</div>
+<p>Here is the raw markdown:</p>
+<pre data-lang="markdown" class="language-markdown "><code class="language-markdown" data-lang="markdown">{{ note(clickable=true, header=&quot;Quiz!&quot;) }}
+
+# Hello this is markdown inside a note shortcode
+
+\`\`\`rust
+fn main() {
+    println!(&quot;Hello World&quot;);
+}
+\`\`\`
+
+We can&#x27;t call another shortcode inside a shortcode, but this is good enough.
+
+{{&#x2F;* end *&#x2F;}}
+</code></pre>
+<p>Finally, we have center
+<div class="note-container">
+  
+    <div class="note-header">
+      
+        <div class="note-center">
+        <p>Centered Text</p>
+
+        </div>
+      
+    </div>
+    <div class="note-content">
+      <p>This is centered text</p>
+
+    </div>
+  
+</div>
+</p>
+<pre data-lang="markdown" class="language-markdown "><code class="language-markdown" data-lang="markdown">{{ note(center=true, header=&quot;Centered Text&quot;, body=&quot;This is centered text&quot;) }}
+</code></pre>
+<p>It works good enough for me!</p>
+
+        </section>
+    </article>
+</main>
+
+
+
+        
+            
+        
+
+        
+        <div class="giscus"></div>
+        <script src="https://utteranc.es/client.js"
+        repo="not-matthias/apollo"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+        
+    </div>
+</body>
+
+</html>
